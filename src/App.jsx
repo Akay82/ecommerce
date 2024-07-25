@@ -14,6 +14,7 @@ import UpdateProduct from "./pages/admin/pages/UpdateProduct"
 import { ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import Allproducts from "./pages/allproducts/Allproducts"
+import ContactUs from "./pages/contact/ContactUs"
 function App() {
   return (
     <MyState> 
@@ -32,6 +33,7 @@ function App() {
         <Dashboard />
        
         }/>
+       <Route path="/contact" element={<ContactUs />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/productinfo/:id" element={<ProductInfo />} />
