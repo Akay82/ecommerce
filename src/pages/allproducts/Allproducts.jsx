@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { addToCart } from '../../redux/CartSlice';
 import myContext from '../../context/data/myContext';
+import { Link } from 'react-router-dom';
 
 const priceRanges = {
   '100-1000': { min: 100, max: 1000 },
@@ -72,13 +73,18 @@ function Allproducts() {
                     className={`h-full border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out border-gray-200 border-opacity-60 rounded-2xl overflow-hidden ${mode === 'dark' ? 'bg-gray-900' : 'bg-white'}`}
                     style={{ height: 'auto' }} // Ensure height adjusts based on content
                   >
-                    <div onClick={()=> window.location.href = `/productinfo/${id}`} className="relative flex justify-center items-center overflow-hidden cursor-pointer">
+                    
+                    <Link    
+                          to={`/productinfo/${id}`}> <div   className="relative flex justify-center items-center overflow-hidden cursor-pointer" >
                       <img
                         className="w-full h-full transition-transform duration-300 ease-in-out transform hover:scale-100"
                         src={imageUrl}
                         alt={title}
+                        onError={(e) => { e.target.src = '/fallback-image.jpg'; }} // Handle image load errors
                       />
-                    </div>
+                      </div>
+                   </Link>
+                    
                     <div
                       className={`p-5 border-t-2 ${mode === 'dark' ? 'bg-gray-800' : 'bg-white'} flex flex-col justify-between`}
                       style={{ minHeight: '150px' }} // Ensure a minimum height for content area
