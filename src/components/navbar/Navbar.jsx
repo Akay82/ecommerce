@@ -104,6 +104,14 @@ function Navbar() {
                       admin
                     </Link> 
 
+                   <Link
+                      to={"/contact"}
+                      className="-m-2 block p-2 font-medium text-gray-900"
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Contact
+                    </Link> 
+
 
                   <div className="flow-root">
                     <a onClick={logout}
@@ -208,6 +216,15 @@ function Navbar() {
                     >
                       admin
                     </Link> 
+
+                   <Link
+                      to={"/contact"}
+                      className="-m-2 block p-2 font-medium text-gray-900"
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Contact Us
+                    </Link> 
+
 
                   <a onClick={logout}
                     className="text-sm font-medium text-gray-700 cursor-pointer  "
